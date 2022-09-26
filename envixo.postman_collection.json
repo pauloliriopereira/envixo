@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "cc471a37-8ccc-4078-89c3-b88235e61a0d",
+		"name": "envixo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11966777"
+	},
+	"item": [
+		{
+			"name": "Adiciona Categoria",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\" : \"categoria5\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/categorias",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adiciona Produto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"titulo\": \"xiaomi note 9 pro\",\n\t\"descricao\" : \"Celular xiaomi\",\n\t\"midias\" : [\n            {\"nome\": \"teste3\", \"stringBase64\" : \"dGVzdGUxCg==\"},\n            {\"nome\": \"teste4\", \"stringBase64\" : \"dGVzdGUxCg==\"}\n        ],\n\t\"idCategoria\" : 2,\n\t\"status\" : \"Ativo\",\n\t\"tag\" : \"#teste\",\n\t\"preco\" : \"2500\",\n\t\"precoPromocional\" : \"2000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/produtos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Produtos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/produtos?page=0&size=10&defaultOrderBy=titulo&totalElements=10&totalPages=5&sort=categoria.nome,DESC",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "Rascunho",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "defaultOrderBy",
+							"value": "titulo"
+						},
+						{
+							"key": "totalElements",
+							"value": "10"
+						},
+						{
+							"key": "totalPages",
+							"value": "5"
+						},
+						{
+							"key": "titulo",
+							"value": "notebook",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "categoria.nome,DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removendo Produtos",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ids\" : [2, 3, 4]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/produtos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: envixo
+#  cloud:
+#    config:
+#      uri: https://configserver.impa.br # ${CLOUD_CONFIG_SRVC}:${CLOUD_CONFIG_PORT}
+  profiles:
+    active: '@activatedProperties@'
