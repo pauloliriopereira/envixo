@@ -63,12 +63,6 @@ public class ProdutoController {
 	@Transactional
 	public ResponseEntity<?> cadastrar(@RequestBody @Valid CadastrarProdutoCommand command) throws IOException {
 		
-//		if(!StringUtils.isEmpty(command.getStatus())) 
-//			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body();
-//		
-//		if(command.getPreco() == null) 
-//			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body();
-		
 		return ResponseEntity.ok(ProdutoDTO.toDTO(this.cadastarProdutoHandler.handle(command)));
 		
 	}
