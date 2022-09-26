@@ -3,10 +3,21 @@ version: '3.8'
 services:
   teste-postgres-compose:
     image: postgres
+    container_name: envixo_database
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-    ports:
-      - '5432:5432'
     volumes:
       - /home/paulolirio/Docker-Compose/PostgreSQL:/var/lib/postgresql/data 
+    network_mode: host
+
+  envixo:
+    build: ./
+    container_name: envixo
+    ports:
+      - '8080:8080'
+    volumes:
+      - /home/paulolirio/Docker-Compose/envixo:/tmp
+    depends_on: 
+      - teste-postgres-compose
+    network_mode: host
