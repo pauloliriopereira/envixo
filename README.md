@@ -5,14 +5,6 @@ Comando para executar o banco de dados:
 
 Obs.: criar database com nome envixo
 
-Comando:
-- create database envixo;
-
-Em seguida executaremos atravês a aplicação na linha de comando com o maven.
-
-Comando para executar a aplicação:
-- mvn clean install spring-boot:run
-
 Para inserir dados para teste deve-se utilizar a ferramenta postman e importar os casos de teste.
 
 Consireções importantes:
